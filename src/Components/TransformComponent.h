@@ -4,7 +4,7 @@
 #include "../EntityManager.h"
 #include "../../lib/glm/glm.hpp"
 #include <SDL2/SDL.h>
-#include "Game.h"
+#include "../Game.h"
 
 class TransformComponent: public Component {
     public:
@@ -23,12 +23,12 @@ class TransformComponent: public Component {
         }
 
         void Initialize() override {
-
+        
         }
 
         void Update(float deltaTime) override {
-            position.x = velocity.x * deltaTime;
-            position.y = velocity.y * deltaTime;
+            position.x += velocity.x * deltaTime;
+            position.y += velocity.y * deltaTime;
         }
 
         void Render() override {
